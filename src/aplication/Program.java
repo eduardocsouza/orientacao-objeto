@@ -14,27 +14,27 @@ public class Program {
 		
 		char c;
 		do {
-			Product product = new Product();
 			System.out.println("informe os produtos em stoques:");
-			product.name = sc.next();
-			product.price = sc.nextDouble();
-			product.quantity = sc.nextInt();
+			String name = sc.next();
+			double price = sc.nextDouble();
+			int quantity = sc.nextInt();
+			Product prod = new Product(name, price, quantity);
 				
 			
-			System.out.println("Product Data: " + product);
+			System.out.println("Product Data: " + prod);
 			System.out.println("-------------------------------------");
 	
 			System.out.println("Updata stock:");
-			int qtd = sc.nextInt();
-			product.addProuct(qtd);
-			System.out.println("Product Data: " + product);
+			quantity = sc.nextInt();
+			prod.addProuct(quantity);
+			System.out.println("Product Data: " + prod);
 			
 			System.out.println("--------------------------------------");
 			
 			System.out.println("Remover quantity:");
-			qtd = sc.nextInt();
-			product.removeProducts(qtd);
-			System.out.println("Product Data: " + product);
+			quantity = sc.nextInt();
+			prod.removeProducts(quantity);
+			System.out.println("Product Data: " + prod);
 			System.out.println();
 			
 			System.out.print("Pretendi adicionar mais item? S/N:");
